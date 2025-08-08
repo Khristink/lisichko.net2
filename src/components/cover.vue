@@ -58,7 +58,6 @@ export default defineComponent({
   display: block;
   border: transparent;
   border-radius: 50px;
-  -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
   mask-image: radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
 }
 </style>
