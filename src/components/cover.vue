@@ -17,7 +17,7 @@ export default defineComponent({
     </v-col>
     <v-col cols="12" sm="6" class="pa-0">
       <v-container fluid class="pa-0 container">
-      <v-img src="public/flowerProtea.png" alt="цветок протеи" class="flower-img"/>
+      <v-img src="/flowerProtea.png" alt="цветок протеи" class="flower-img"/>
       </v-container>
     </v-col>
   </v-row>
@@ -54,10 +54,11 @@ export default defineComponent({
 
 .flower-img {
   max-width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   border: transparent;
   border-radius: 50px;
+  -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
   mask-image: radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
 }
 </style>
