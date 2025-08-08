@@ -43,5 +43,6 @@ export default defineComponent({
   position: relative !important;
   z-index: 100 !important;
   height: auto;
+  min-height: 100vh;
 }
 </style>

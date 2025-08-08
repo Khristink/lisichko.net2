@@ -68,7 +68,8 @@ export default defineComponent({
 .relative-position {
   position: relative !important;
   z-index: 100 !important;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
 }
 
 .v-list-item-title {
