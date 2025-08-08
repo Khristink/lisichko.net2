@@ -7,7 +7,7 @@ export default defineComponent({
   components: {PetalBack},
   data() {
     return {
-      current_image_index: null,
+      current_image_index: 0,
       educationList: [
         {
           title: "Подготовка консультантов телефона доверия",
@@ -96,14 +96,14 @@ export default defineComponent({
 
 <template>
   <v-container fluid class="relative-position pa-0">
-  <PetalBack/>
+  <PetalBack backTheme="backDark"/>
 <v-container fluid style="padding: 7rem 1.25rem">
-  <div class="title-container">
+  <div class="title-container-dark">
     <h3>Образование</h3>
   </div>
   <v-row class="ma-7">
     <v-col cols="12" md="6" class="pa-2">
-      <v-list class="transparent">
+      <v-list class="transparent-dark">
         <v-list-item class="ma-2">
           <v-list-item-title>
             Санкт-Петербургский Государственный Университет
@@ -120,8 +120,10 @@ export default defineComponent({
         class="ma-2"
         >
           <v-list-item-title>{{ item.title }}</v-list-item-title>
-          <v-list-item-subtitle>{{ item.organization }}</v-list-item-subtitle>
-          <v-list-item-subtitle>{{ item.year }}</v-list-item-subtitle>
+          <v-list-item-subtitle>
+            {{ item.organization }}<br>
+            {{ item.year }}
+          </v-list-item-subtitle>
         </v-list-item>
       </v-list>
     </v-col>
@@ -189,4 +191,17 @@ export default defineComponent({
   justify-content:  center;
 
 }
+
+.v-list-item-title {
+  color: #E4C4B8 !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  line-height: 1;
+}
+
+.v-list {
+  color: #E4C4B8  !important;
+}
+
 </style>

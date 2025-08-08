@@ -10,14 +10,14 @@ export default defineComponent({
 
 <template>
   <v-container fluid class="relative-position pa-0">
-    <PetalBack/>
+    <PetalBack backTheme="backDark"/>
     <v-container fluid style="padding: 5rem 1.25rem">
-      <div class="title-container">
-        <h3 class="title-container">Консультации</h3>
+      <div class="title-container-dark">
+        <h3 class="title-container-dark">Консультации</h3>
       </div>
       <v-row class="ma-7">
-        <v-col cols="12" class="title-container d-flex flex-column justify-center transparent">
-          <h4 class="title-container">Мои Принципы Работы</h4>
+        <v-col cols="12" class="title-container-dark d-flex flex-column justify-center transparent-dark">
+          <h4 class="title-container-dark">Мои Принципы Работы</h4>
           <p>Консультирую в когнитивно-поведенческом и интегративном подходах.
             В основе моей практики лежит глубокое уважение к каждому клиенту.
             Я гарантирую полное сохранение конфиденциальности, что создает безопасное
@@ -26,7 +26,7 @@ export default defineComponent({
           <br/>
           <br/>
           <br/>
-          <h4 class="title-container">О Консультациях</h4>
+          <h4 class="title-container-dark">О Консультациях</h4>
           <p>Каждая консультация длится от 50 до 55 минут. На первой встрече
             мы знакомимся и формулируем ваш запрос, что позволяет
             нам наметить путь дальнейшей работы. Этот начальный этап важен для

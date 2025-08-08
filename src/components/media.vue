@@ -40,21 +40,21 @@ export default defineComponent({
 
 <template>
   <v-container fluid class="relative-position pa-0">
-    <PetalBack/>
+    <PetalBack backTheme="backDark"/>
     <v-container fluid style="padding: 5rem 1.25rem">
-      <div class="title-container">
-        <h3 class="title-container">Медиа и публикации</h3>
+      <div class="title-container-dark">
+        <h3 class="title-container-dark">Медиа и публикации</h3>
       </div>
       <v-row class="ma-7">
         <v-col cols="12" md="6">
-          <v-list class="transparent">
+          <v-list class="transparent-dark">
             <v-list-item
                 v-for="(item, index) in articles"
                 :key="index"
                 class="ma-1 pa-0"
             >
               <v-list-item-title>{{item.title}}</v-list-item-title>
-              <a Жsrc="item.url"><em>Сcылка</em></a>
+              <a :href="item.url"><em>Перейти на страницу статьи</em></a>
             </v-list-item>
           </v-list>
         </v-col>
@@ -69,5 +69,21 @@ export default defineComponent({
   position: relative !important;
   z-index: 100 !important;
   height: 100vh;
+}
+
+.v-list-item-title {
+  color: #E4C4B8 !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  line-height: 1;
+}
+
+.v-list {
+  color: #E4C4B8  !important;
+}
+
+a {
+  color: #E4C4B8 !important;
 }
 </style>

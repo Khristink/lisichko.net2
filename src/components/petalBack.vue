@@ -2,12 +2,18 @@
 import {defineComponent} from 'vue'
 
 export default defineComponent({
-  name: "PetalBack"
+  name: "PetalBack",
+  props: {
+    backTheme: {
+      type: String,
+      default: ""
+    }
+  }
 })
 </script>
 
 <template>
-  <div class="petals-container">
+  <div class="petals-container" :class="backTheme">
     <div class="petal-wrapper first">
       <svg width="100%" height="auto" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" fill="none">
         <path
@@ -91,7 +97,7 @@ export default defineComponent({
   </div>
 </template>
 
-<style scoped>
+<style>
 :root {
   --pantone-7613: #C18F7E;
   --pantone-7614: #AC877A;
