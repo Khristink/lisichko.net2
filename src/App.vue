@@ -28,6 +28,7 @@ export  default {
       this.contactsSeen = true;
       this.consultationsSeen = true;
       this.mediaSeen = true;
+      this.menu = false;
 
   },
     onlyEdu() {
@@ -37,6 +38,7 @@ export  default {
       this.contactsSeen = false;
       this.consultationsSeen = false;
       this.mediaSeen = false;
+      this.menu = false;
     },
     onlyReq() {
       this.coverSeen = false;
@@ -45,6 +47,7 @@ export  default {
       this.contactsSeen = false;
       this.consultationsSeen = false;
       this.mediaSeen = false;
+      this.menu = false;
     },
     onlyContacts() {
       this.coverSeen = false;
@@ -53,6 +56,7 @@ export  default {
       this.contactsSeen = true;
       this.consultationsSeen = false;
       this.mediaSeen = false;
+      this.menu = false;
     },
     onlyConsultations() {
       this.coverSeen = false;
@@ -61,6 +65,7 @@ export  default {
       this.contactsSeen = false;
       this.consultationsSeen = true;
       this.mediaSeen = false;
+      this.menu = false;
     },
     onlyMedia() {
       this.coverSeen = false;
@@ -69,6 +74,7 @@ export  default {
       this.contactsSeen = false;
       this.consultationsSeen = false;
       this.mediaSeen = true;
+      this.menu = false;
     }
 }}
 </script>
