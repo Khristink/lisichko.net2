@@ -1,10 +1,19 @@
 <script lang="ts">
-import {defineComponent} from 'vue'
-import PetalBack from "@/components/petalBack.vue";
+import { defineComponent } from 'vue'
+import PetalBack from '@/components/petalBack.vue'
+
+type Contact = {
+  href: string
+  icon?: string
+  text: string
+  isExternal: boolean
+  imgSrc?: string
+  alt?: string
+}
 
 export default defineComponent({
-  name: "Contacts",
-  components: {PetalBack},
+  name: 'Contacts',
+  components: { PetalBack },
   data() {
     return {
       contacts: [
@@ -32,7 +41,7 @@ export default defineComponent({
           text: '+7 993 337 12 40',
           isExternal: false
         }
-      ]
+      ] as Contact[]
     }
   }
 })
@@ -40,66 +49,69 @@ export default defineComponent({
 
 <template>
   <v-container fluid class="relative-position pa-0">
-    <PetalBack/>
-    <v-container fluid style="padding: 5rem 1.25rem">
+    <PetalBack />
+
+    <v-container fluid style="padding: 5rem 1.25rem;">
       <div class="title-container">
-        <h3 class="title-container">Контакты</h3>
+        <h3 class="title">Контакты</h3>
       </div>
+
       <v-row class="ma-7 d-flex justify-center">
         <v-col cols="12" md="6">
           <v-list class="transparent">
+            <!-- контакты из массива -->
             <v-list-item
-                v-for="(contact, index) in contacts"
-                :key="index"
+                v-for="contact in contacts"
+                :key="contact.href"
             >
               <a
                   :href="contact.href"
                   :target="contact.isExternal ? '_blank' : '_self'"
-                  :rel="contact.isExternal ? 'noopener' : ''"
-                  class="d-flex align-center"
-                  style="text-decoration: none; color: inherit;"
+                  :rel="contact.isExternal ? 'noopener' : undefined"
+                  class="d-flex align-center contact-link"
+                  :aria-label="contact.text"
               >
                 <template v-if="contact.imgSrc">
                   <v-img
                       :src="contact.imgSrc"
-                      :alt="contact.alt"
+                      :alt="contact.alt || ''"
                       width="88"
                       height="31"
-                      contain
+                      style="object-fit: contain;"
                   />
-                  <span style="margin-left: 0.5rem;">{{ contact.text }}</span>
+                  <span class="ml-2">{{ contact.text }}</span>
                 </template>
+
                 <template v-else>
-                  <i :class="contact.icon" style="margin-right: 0.5rem;"></i>
+                  <i :class="contact.icon" class="mr-2" aria-hidden="true" />
                   <span>{{ contact.text }}</span>
                 </template>
               </a>
             </v-list-item>
-            <br/>
-            <br/>
-            <br/>
+
+            <v-divider class="my-8" />
+
+            <!-- отдельный блок b17 - вне цикла -->
             <v-list-item>
               <a
                   href="https://www.b17.ru/khristina_kuzmina/?prt=242032"
                   target="_blank"
                   rel="noopener"
-                  class="d-flex align-center"
-                  style="text-decoration: none; color: inherit;"
+                  class="d-flex align-center contact-link"
+                  aria-label="Профиль на b17"
               >
                 <v-img
                     src="https://www.b17.ru/img/b17_88x31_b_retina.png"
                     alt="b17"
                     width="30"
                     height="31"
-                    contain
+                    style="object-fit: contain;"
                 />
-                <span style="margin-left: 0.01rem;"/>
               </a>
             </v-list-item>
           </v-list>
         </v-col>
       </v-row>
-
     </v-container>
   </v-container>
 </template>
@@ -111,4 +123,20 @@ export default defineComponent({
   height: 100vh;
 }
 
+.title-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: inherit;
+}
 </style>

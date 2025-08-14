@@ -49,7 +49,7 @@ export default defineComponent({
             с осознанием и принятием личных ограничений.</p>
         </v-col>
         <v-col cols="12" md="6" class="d-flex">
-          <v-img src="photoMe.jpg" alt="портретное фото Христины" class="main-photo"/>
+          <v-img  cover src="photoMe.jpg" alt="портретное фото Христины" class="main-photo"/>
         </v-col>
       </v-row>
       <div class="title-container">
@@ -81,9 +81,8 @@ export default defineComponent({
 
 
 .main-photo {
-  border: #AC877A 1.25rem solid;
+  border: #AC877A 1rem solid;
   border-radius: 60px;
   margin: 1.25rem;
-  object-fit: contain;
 }
 </style>

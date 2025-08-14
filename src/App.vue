@@ -6,9 +6,10 @@ import Contacts from "@/components/contacts.vue";
 import Consultations from "@/components/consultations.vue";
 import Media from "@/components/media.vue";
 import Intro from "@/components/intro.vue";
+import Reviews from "@/components/reviews.vue";
 
 export  default {
-  components: {Intro, Media, Consultations, Contacts, Requests, Education, Cover},
+  components: {Intro, Media, Consultations, Contacts, Requests, Education, Cover, Reviews},
   data ()  {
     return {
       menu: false,
@@ -17,7 +18,8 @@ export  default {
       requestsSeen: true,
       contactsSeen: true,
       consultationsSeen: true,
-      mediaSeen: true
+      mediaSeen: true,
+      revSeen: true
     }
   },
   methods: {
@@ -29,6 +31,7 @@ export  default {
       this.consultationsSeen = true;
       this.mediaSeen = true;
       this.menu = false;
+      this.revSeen = true;
 
   },
     onlyEdu() {
@@ -38,6 +41,7 @@ export  default {
       this.contactsSeen = false;
       this.consultationsSeen = false;
       this.mediaSeen = false;
+      this.revSeen = false;
       this.menu = false;
     },
     onlyReq() {
@@ -47,6 +51,7 @@ export  default {
       this.contactsSeen = false;
       this.consultationsSeen = false;
       this.mediaSeen = false;
+      this.revSeen = false;
       this.menu = false;
     },
     onlyContacts() {
@@ -56,6 +61,7 @@ export  default {
       this.contactsSeen = true;
       this.consultationsSeen = false;
       this.mediaSeen = false;
+      this.revSeen = false;
       this.menu = false;
     },
     onlyConsultations() {
@@ -65,6 +71,7 @@ export  default {
       this.contactsSeen = false;
       this.consultationsSeen = true;
       this.mediaSeen = false;
+      this.revSeen = false;
       this.menu = false;
     },
     onlyMedia() {
@@ -74,6 +81,17 @@ export  default {
       this.contactsSeen = false;
       this.consultationsSeen = false;
       this.mediaSeen = true;
+      this.revSeen = false;
+      this.menu = false;
+    },
+    onlyRevSeen() {
+      this.coverSeen = false;
+      this.eduSeen = false;
+      this.requestsSeen = false;
+      this.contactsSeen = false;
+      this.consultationsSeen = false;
+      this.mediaSeen = false;
+      this.revSeen = true;
       this.menu = false;
     }
 }}
@@ -170,6 +188,17 @@ export  default {
           <span>Медиа и публикации</span>
         </v-btn>
       </v-list-item>
+        <v-list-item class="pa-0">
+          <v-btn
+              text
+              block
+              style="background-color: #5B3F3C; color: #E4C4B8; justify-content: flex-start; width: 100%;"
+              @click="onlyRevSeen"
+          >
+            <v-icon class="mr-3" style="color: #E4C4B8;">mdi-comment-quote-outline</v-icon>
+            <span>Отзывы</span>
+          </v-btn>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
@@ -181,6 +210,7 @@ export  default {
       <Consultations v-if="consultationsSeen"/>
       <Contacts v-if="contactsSeen"/>
       <Media v-if="mediaSeen"/>
+      <Reviews v-if="revSeen"/>
     </v-main>
   </v-app>
 </template>
