@@ -16,7 +16,7 @@ export default defineComponent({
         <h3 class="title-container-dark">Консультации</h3>
       </div>
       <v-row class="ma-7">
-        <v-col cols="12" class="title-container-dark d-flex flex-column justify-center transparent-dark">
+        <v-col cols="12" md="6" class="title-container-dark d-flex flex-column justify-center transparent-dark">
           <h4 class="title-container-dark">Мои Принципы Работы</h4>
           <p>Консультирую в когнитивно-поведенческом и интегративном подходах.
             В основе моей практики лежит глубокое уважение к каждому клиенту.
