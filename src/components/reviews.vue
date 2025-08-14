@@ -95,9 +95,9 @@ export default defineComponent({
               </v-card>
             </v-slide-group-item>
           </v-slide-group>
+          <h5><em>отзывы взяты из открытых источников</em></h5>
         </v-col>
       </v-row>
-      <h5 class="ma-5"><em>отзывы взяты из открытых источников</em></h5>
     </v-container>
   </v-container>
 </template>
