@@ -86,7 +86,9 @@ export default defineComponent({
             :key="index"
             show-arrows
             >
-              <v-card class="ma-2 pa-0 review-card transparent">
+              <v-card class="ma-2 pa-0 review-card transparent"
+              style="color: #5B3F3C !important"
+              >
                 <v-card-text>
                   {{item.name}}
                   <br><br>
