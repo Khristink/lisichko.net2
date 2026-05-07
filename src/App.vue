@@ -165,18 +165,6 @@ export  default {
           </v-btn>
         </v-list-item>
 
-
-      <v-list-item class="pa-0">
-        <v-btn
-            text
-            block
-            @click="onlyMedia"
-            style="background-color: #5B3F3C; color: #E4C4B8; justify-content: flex-start; width: 100%;"
-        >
-          <v-icon class="mr-3" style="color: #E4C4B8;">mdi-newspaper</v-icon>
-          <span>Медиа и публикации</span>
-        </v-btn>
-      </v-list-item>
         <v-list-item class="pa-0">
           <v-btn
               text
@@ -188,6 +176,18 @@ export  default {
             <span>Отзывы</span>
           </v-btn>
         </v-list-item>
+      <v-list-item class="pa-0">
+        <v-btn
+            text
+            block
+            @click="onlyMedia"
+            style="background-color: #5B3F3C; color: #E4C4B8; justify-content: flex-start; width: 100%;"
+        >
+          <v-icon class="mr-3" style="color: #E4C4B8;">mdi-newspaper</v-icon>
+          <span>Медиа и публикации</span>
+        </v-btn>
+      </v-list-item>
+
 
         <v-list-item class="pa-0">
           <v-btn
@@ -210,8 +210,8 @@ export  default {
       <Education v-if="eduSeen"/>
       <Requests v-if="requestsSeen"/>
       <Consultations v-if="consultationsSeen"/>
-      <Media v-if="mediaSeen"/>
       <Reviews v-if="revSeen"/>
+      <Media v-if="mediaSeen"/>
       <Contacts v-if="contactsSeen"/>
     </v-main>
   </v-app>
