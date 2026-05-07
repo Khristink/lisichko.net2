@@ -165,17 +165,6 @@ export  default {
           </v-btn>
         </v-list-item>
 
-        <v-list-item class="pa-0">
-          <v-btn
-              text
-              block
-              @click="onlyContacts"
-              style="background-color: #5B3F3C; color: #E4C4B8; justify-content: flex-start; width: 100%;"
-          >
-            <v-icon class="mr-3" style="color: #E4C4B8;">mdi-phone-outline</v-icon>
-            <span>Контакты</span>
-          </v-btn>
-        </v-list-item>
 
       <v-list-item class="pa-0">
         <v-btn
@@ -199,8 +188,21 @@ export  default {
             <span>Отзывы</span>
           </v-btn>
         </v-list-item>
+
+        <v-list-item class="pa-0">
+          <v-btn
+              text
+              block
+              @click="onlyContacts"
+              style="background-color: #5B3F3C; color: #E4C4B8; justify-content: flex-start; width: 100%;"
+          >
+            <v-icon class="mr-3" style="color: #E4C4B8;">mdi-phone-outline</v-icon>
+            <span>Контакты и стоимость</span>
+          </v-btn>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
+
 
     <v-main app>
       <Cover v-if="coverSeen"/>
@@ -208,9 +210,9 @@ export  default {
       <Education v-if="eduSeen"/>
       <Requests v-if="requestsSeen"/>
       <Consultations v-if="consultationsSeen"/>
-      <Contacts v-if="contactsSeen"/>
       <Media v-if="mediaSeen"/>
       <Reviews v-if="revSeen"/>
+      <Contacts v-if="contactsSeen"/>
     </v-main>
   </v-app>
 </template>

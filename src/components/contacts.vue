@@ -53,9 +53,16 @@ export default defineComponent({
 
     <v-container fluid style="padding: 5rem 1.25rem;">
       <div class="title-container">
-        <h3 class="title">Контакты</h3>
+        <h3 class="title">Контакты и стоимость</h3>
       </div>
-
+      <v-row class="ma-7 d-flex justify-center">
+        <v-col cols="12" md="6">
+      <div class="d-flex justify-space-between transparent pr-5 pl-5">
+      <p>Стоимость консультации длительностью 50-55 минут</p>
+        <p>6600 ₽ / 90 $</p>
+      </div>
+        </v-col>
+      </v-row>
       <v-row class="ma-7 d-flex justify-center">
         <v-col cols="12" md="6">
           <v-list class="transparent">
